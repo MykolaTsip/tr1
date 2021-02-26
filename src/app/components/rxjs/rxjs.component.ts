@@ -21,6 +21,7 @@ export class RxjsComponent implements OnInit {
     {name: 'D', age: 12},
     {name: 'I', age: 13},
     {name: 'F', age: 24},
+    {name: 'G', age: 26},
   ]
 
 
