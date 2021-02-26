@@ -1,9 +1,24 @@
-
 <div class="class1">
-  <button class="btn" id="int">показати з інтервалом</button>
-  <button class="btn" id="rxjs">показати через rxJS</button>
+  <button class="btn" (click)="btnI()">показати з інтервалом</button>
+  <button class="btn" (click)="rxjsBtn()">показати через rxJS</button>
 </div>
-<hr>
 <div class="result">
 
 </div>
+<hr>
+
+<canvas width="600px" height="400px"></canvas>
+<br>
+<button class="btn" style="padding: 10px; margin-left: 50px" id="clear">CLEAR</button>
+<br>
+<hr>
+
+<button (click)="clickSubject()">вивести в консоль текст через Subject</button>
+<br>
+<hr>
+
+<button (click)="clickBehsviorSubject()">вивести в консоль текст через BehaviorSubject</button>
+<br>
+<hr>
+
+<button (click)="clickReplaySubject()">вивести в консоль текст через ReplaySubject</button>
