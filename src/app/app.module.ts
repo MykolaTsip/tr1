@@ -11,22 +11,26 @@ import { BasicLineChartComponent } from './components/basic-line-chart/basic-lin
 import {HttpClientModule} from "@angular/common/http";
 import * as echarts from 'echarts';
 import { RxjsComponent } from './components/rxjs/rxjs.component';
+import { RxjsAjaxComponent } from './components/rxjs-ajax/rxjs-ajax.component';
+import { FullScreenComponent } from './components/full-screen/full-screen.component';
+import { DecoratorComponent } from './components/decorator/decorator.component';
+import { NgrxComponent } from './components/ngrx/ngrx.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ErrorComponent,
-
     BasicLineChartComponent,
-
-    RxjsComponent
+    RxjsComponent,
+    RxjsAjaxComponent,
+    FullScreenComponent,
+    DecoratorComponent,
+    NgrxComponent
   ],
   imports: [
     BrowserModule,
     NgxEchartsModule.forRoot({ echarts }),
     HttpClientModule,
-
-    // якогось чорта не показує вміст Апп компоненти коли я підключаю роути
     AppRoutingModule
   ],
   providers: [],
