@@ -1,0 +1,11 @@
+<p>counter works!</p>
+
+<button class="m-2 f-30" (click)="plus()"> PLUS </button>
+<button class="m-2 f-30" (click)="minus()" [disabled]="validButton$ | async"> MINUS </button>
+<button class="m-2 f-30" (click)="clear()" [disabled]="validButton$ | async"> CLEAR </button>
+<p class="f-30">
+  amount: {{this.count$ | async}}
+</p>
+<p class="f-30" *ngIf="this.update$">
+ last updated at: {{this.update$ | async | date : 'hh/MM/ss'}}
+</p>

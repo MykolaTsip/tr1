@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {RouterModule} from "@angular/router";
 import {AppComponent} from "./app.component";
 import {ErrorComponent} from "./components/error/error.component";
@@ -7,7 +7,8 @@ import {BasicLineChartComponent} from "./components/basic-line-chart/basic-line-
 import {RxjsComponent} from "./components/rxjs/rxjs.component";
 import {RxjsAjaxComponent} from "./components/rxjs-ajax/rxjs-ajax.component";
 import {FullScreenComponent} from "./components/full-screen/full-screen.component";
-import {NgrxComponent} from "./components/ngrx/ngrx.component";
+import {DecoratorComponent} from "./components/decorator/decorator.component";
+import {DomAngularComponent} from "./components/dom-angular/dom-angular.component";
 
 const routes = [
   // {
@@ -26,7 +27,15 @@ const routes = [
     path: 'fullScreen', component: FullScreenComponent
   },
   {
-    path: 'ngrx', component: NgrxComponent
+    path: 'ngrxCount', loadChildren: () => import('./modules/ngrx-counter/ngrx-counter.module')
+      .then(m => m.NgrxCounterModule)
+      .catch(err => alert(err))
+  },
+  {
+    path: 'decorators', component: DecoratorComponent
+  },
+  {
+    path: 'domAngular', component: DomAngularComponent
   },
   // {
   //   path: '**', redirectTo: 'error', pathMatch: 'full'
@@ -44,4 +53,5 @@ const routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
